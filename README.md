@@ -38,7 +38,7 @@ This design allows developers to change parts of the application without affecti
 
 ### API Documentation
 
-Our Application Programming Interface is available at [API page](API.md) or [OPEN API page.](apispec.json)
+Our Application Programming Interface is available at [OPEN API page](https://app.swaggerhub.com/apis/T6549/TestProducts/1.0.0) or [API page.](API.md)
 
 ### Unit Test
 

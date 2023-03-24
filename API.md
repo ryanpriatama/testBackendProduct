@@ -31,9 +31,9 @@ curl --location 'localhost:3000/api/products' \
 --header 'Content-Type: application/json' \
 --data '{
     "name" : "abcd123",
-    "price" : 10000,
-    "description" : "barang baru",
-    "quantity" : 50
+    "price" : 12000,
+    "description" : "barang baru ready siap antar",
+    "quantity" : 20
 }'
 
 ### Body Response
