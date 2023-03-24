@@ -24,7 +24,7 @@ This project is example of RESTful API to store and get products.
 
 ### Design Pattern
 
-<img width="915" alt="Screenshot 2023-03-23 at 22 06 09" src="https://user-images.githubusercontent.com/38873729/227323635-ab9772c3-8d6c-4e41-8dd3-69dc8c9c08e1.png">
+![mc design architecture drawio](https://user-images.githubusercontent.com/38873729/227397204-938fd524-e026-40da-b8bb-ef9fe6707f07.png)
 
 MVC (Model-View-Controller) is one of the most commonly used software architectural designs in web and desktop application development. This design separates the application into three main components, namely the model, view, and controller. However, in this project development, the view aspect is not involved, so the architecture design becomes model MC.
 
