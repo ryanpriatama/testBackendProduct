@@ -1,0 +1,202 @@
+{
+    "openapi":"3.0.2",
+    "info": {
+      "title":"Products Restful API",
+      "description": "API Spec for products Restful API",
+      "version":"1.0"
+    },
+    "servers": [
+      {"url":"http://localhost:3000"}
+    ],
+    "paths": {
+        "/api/products" :{
+            "get":{
+                "security": [{
+                    "ProductsAuth":["api-key-rahasia"]
+                }],
+                "tags": ["Products API"],
+                "description": "Get products sorted by ascending_name, descending_name, high_price_product, low_price_product, newest_product",
+                "summary": "Get all products sorted",
+                "parameters": [
+                    {
+                        "schema":{},
+                        "in": "query",
+                        "name" :"sort",
+                        "example":"ascending_name"
+                    }
+                ],
+                "responses": {
+                    "200":{
+                        "description": "Success get all products sorted",
+                        "content": {
+                            "application/json":{
+                                "schema":{
+                                    "type": "object",
+                                    "properties" :{
+                                        "code" :{
+                                            "type": "number",
+                                            "example":200
+                                        },
+                                        "status" :{
+                                            "type" : "string",
+                                            "example":"OK"
+                                        },
+                                        "data" :{
+                                            "type": "array",
+                                            "items" :{
+                                                "type": "object",
+                                                "properties": {
+                                                    "id":{
+                                                        "type": "number",
+                                                        "example":1
+                                                    },
+                                                    "name":{
+                                                        "type": "string",
+                                                        "example":"abcd123"
+                                                    },
+                                                    "price":{
+                                                        "type": "number",
+                                                        "example":10000
+                                                    },
+                                                    "descriptions":{
+                                                        "type": "string",
+                                                        "example":"barang baru"
+                                                    },
+                                                    "quantity":{
+                                                        "type": "number",
+                                                        "example":50
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Fail Unauthorized get all products sorted",
+                        "content": {
+                            "application/json":{
+                                "schema":{
+                                    "type": "object",
+                                    "properties" :{
+                                        "code" :{
+                                            "type": "number",
+                                            "example":401
+                                        },
+                                        "status" :{
+                                            "type" : "string",
+                                            "example":"UNAUTHORIZED"
+                                        },
+                                        "data" :{
+                                            "example":null
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post":{
+                "security": [{
+                    "ProductsAuth":[]
+                }],
+                "tags": ["Products API"],
+                "description": "Create or add product to database",
+                "summary": "Create product",
+                "requestBody":{
+                    "content": {
+                        "application/json":{
+                            "schema":{
+                                "$ref":"#/components/schemas/CreateProduct"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200":{
+                        "description": "Success Create Product",
+                        "content": {
+                            "application/json":{
+                                "schema":{
+                                    "type": "object",
+                                    "properties": {
+                                        "code":{
+                                            "type": "number"
+                                        },
+                                        "status":{
+                                            "type": "string"
+                                        },
+                                        "data":{
+                                            "$ref" : "#/components/schemas/Products"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "ProductsAuth":{
+                "type": "apiKey",
+                "in": "header",
+                "name": "X-API-Key",
+                "description": "Authentication for Products API, EXAMPLE:api-key-rahasia "
+            }
+        },
+        "schemas": {
+            "CreateProduct":{
+                "type": "object",
+                "properties": {
+                    "name":{
+                        "type": "string",
+                        "example":"buku gambar"
+                    },
+                    "price":{
+                        "type": "number",
+                        "example":15000
+                    },
+                    "description":{
+                        "type": "string",
+                        "example":"baru dan murah"
+                    },
+                    "quantity":{
+                        "type": "number",
+                        "example":15
+                    }
+                }
+            },
+            "Products":{
+                "type": "object",
+                "properties": {
+                    "id":{
+                        "type": "number",
+                        "example":1
+                    },
+                    "name":{
+                        "type": "string",
+                        "example":"abcd123"
+                    },
+                    "price":{
+                        "type": "number",
+                        "example":10000
+                    },
+                    "descriptions":{
+                        "type": "string",
+                        "example":"barang baru"
+                    },
+                    "quantity":{
+                        "type": "number",
+                        "example":50
+                    }
+                }
+            }
+        }
+    }
+  }
