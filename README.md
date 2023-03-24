@@ -42,6 +42,8 @@ My Application Programming Interface is available at [OPEN API page](https://app
 
 ### Unit Test
 
+Coverage total unit test of this project is 91%.
+
 <img width="703" alt="Screenshot 2023-03-23 at 21 56 56" src="https://user-images.githubusercontent.com/38873729/227323969-4ab7d042-357b-4695-b623-aa6b459667cc.png">
 
 ## Getting Started
