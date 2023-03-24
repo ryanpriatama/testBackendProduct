@@ -64,6 +64,13 @@ curl --location 'localhost:3000/api/products' \
 ### Query Params
     sort=ascending_name
 
+### All Example Query Params "sort"
+    sort=ascending_name          //sort product order by name ascending
+    sort=descending_name         //sort product order by name descending
+    sort=high_price_product      //sort product order by price from high price to low price
+    sort=low_price_product       //sort product order by price from low price to high price
+    sort=newest_product          //sort product order from newest to oldest
+
 ### Header
     'X-API-Key: api-key-rahasia'
 
