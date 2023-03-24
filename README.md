@@ -46,7 +46,7 @@ My Application Programming Interface is available at [OPEN API page](https://app
 
 ## Getting Started
 
-Below we describe how to start this project
+Below I describe how to start this project
 
 ### Installing
 
